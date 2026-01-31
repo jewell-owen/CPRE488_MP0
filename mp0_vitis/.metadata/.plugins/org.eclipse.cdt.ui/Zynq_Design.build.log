@@ -1,4 +1,4 @@
-11:34:28 **** Incremental Build of configuration Debug for project Zynq_Design ****
+15:23:57 **** Incremental Build of configuration Debug for project Zynq_Design ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -8,13 +8,13 @@ make --no-print-directory main-build
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:62:29: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   62 |     printf("Switch status: %u\r\n", switchStatus);
-      |                            ~^       ~~~~~~~~~~~~
-      |                             |       |
-      |                             |       u32 {aka long unsigned int}
-      |                             unsigned int
-      |                            %lu
+../src/helloworld.c:71:30: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   71 |      printf("Button status: %u\r\n", buttonStatus);
+      |                             ~^       ~~~~~~~~~~~~
+      |                              |       |
+      |                              |       u32 {aka long unsigned int}
+      |                              unsigned int
+      |                             %lu
 'Finished building: ../src/helloworld.c'
 ' '
 'Building target: Zynq_Design.elf'
@@ -29,5 +29,5 @@ arm-none-eabi-size Zynq_Design.elf  |tee "Zynq_Design.elf.size"
 'Finished building: Zynq_Design.elf.size'
 ' '
 
-11:34:28 Build Finished (took 656ms)
+15:23:58 Build Finished (took 603ms)
 

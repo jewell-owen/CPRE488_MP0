@@ -58,6 +58,18 @@ int main()
 
 //    print("Hello World\n\r");
 //    print("Successfully ran Hello World application");
+//    u32 buttonStatus = 0;
+//    for (int i = 0; i < 100000; i++){
+//   	buttonStatus = Xil_In32(XPAR_AXI_GPIO_1_BASEADDR);
+//    	printf("Button status: %u\r\n", buttonStatus);
+//    }
+
+    u32 buttonStatus = 0;
+    for (int i = 0; i < 100000; i++){
+    	buttonStatus = Xil_In32( 0xE000A00C);
+    	buttonStatus &= 0b111111;
+    	printf("Button status: %u\r\n", buttonStatus);
+    }
 
 //    u32 switchStatus = Xil_In32(XPAR_AXI_GPIO_2_BASEADDR);
 //    printf("Switch status: %u\r\n", switchStatus);

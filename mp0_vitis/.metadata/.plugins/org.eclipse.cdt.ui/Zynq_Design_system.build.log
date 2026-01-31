@@ -1,0 +1,10 @@
+15:51:21 **** Build of configuration Debug for project Zynq_Design_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 60140 C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design_system/Debug/system.bif --bitstream C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit --elf C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/Debug/Zynq_Design.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+15:51:26 Build Finished (took 4s.661ms)
+

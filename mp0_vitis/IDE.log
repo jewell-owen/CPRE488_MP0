@@ -494,3 +494,106 @@ con
 
 15:24:16 INFO  : Launch script is exported to file 'C:\Users\ojewell\CPRE488_MP0\mp0_vitis\.sdk\launch_scripts\single_application_debug\debugger_zynq_design-default.tcl'
 15:29:23 INFO  : Disconnected from the channel tcfchan#2.
+15:44:57 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\ojewell\CPRE488_MP0\mp0_vitis\temp_xsdb_launch_script.tcl
+15:44:58 INFO  : XSCT server has started successfully.
+15:44:58 INFO  : plnx-install-location is set to ''
+15:44:58 INFO  : Successfully done setting XSCT server connection channel  
+15:44:58 INFO  : Successfully done setting workspace for the tool. 
+15:44:59 INFO  : Platform repository initialization has completed.
+15:44:59 INFO  : Registering command handlers for Vitis TCF services
+15:44:59 INFO  : Successfully done query RDI_DATADIR 
+15:51:19 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design'...
+15:51:23 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa is already opened
+
+15:51:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:51:34 INFO  : Jtag cable 'Digilent Zed 210248B18A36' is selected.
+15:51:34 INFO  : 'jtag frequency' command is executed.
+15:51:34 INFO  : Context for 'APU' is selected.
+15:51:34 INFO  : System reset is completed.
+15:51:37 INFO  : 'after 3000' command is executed.
+15:51:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18A36" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18A36-23727093-0"}' command is executed.
+15:51:39 INFO  : FPGA configured successfully with bitstream "C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit"
+15:51:39 INFO  : Context for 'APU' is selected.
+15:51:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:51:39 INFO  : 'configparams force-mem-access 1' command is executed.
+15:51:39 INFO  : Context for 'APU' is selected.
+15:51:39 INFO  : Sourcing of 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/psinit/ps7_init.tcl' is done.
+15:51:40 INFO  : 'ps7_init' command is executed.
+15:51:40 INFO  : 'ps7_post_config' command is executed.
+15:51:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:51:40 INFO  : The application 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/Debug/Zynq_Design.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:51:40 INFO  : 'configparams force-mem-access 0' command is executed.
+15:51:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18A36" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18A36-23727093-0"}
+fpga -file C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/Debug/Zynq_Design.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:51:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:51:40 INFO  : 'con' command is executed.
+15:51:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:51:40 INFO  : Launch script is exported to file 'C:\Users\ojewell\CPRE488_MP0\mp0_vitis\.sdk\launch_scripts\single_application_debug\debugger_zynq_design-default.tcl'
+15:59:16 INFO  : Disconnected from the channel tcfchan#2.
+15:59:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:59:17 INFO  : Jtag cable 'Digilent Zed 210248B18A36' is selected.
+15:59:17 INFO  : 'jtag frequency' command is executed.
+15:59:17 INFO  : Context for 'APU' is selected.
+15:59:18 INFO  : System reset is completed.
+15:59:21 INFO  : 'after 3000' command is executed.
+15:59:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18A36" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18A36-23727093-0"}' command is executed.
+15:59:23 INFO  : FPGA configured successfully with bitstream "C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit"
+15:59:23 INFO  : Context for 'APU' is selected.
+15:59:24 INFO  : Hardware design and registers information is loaded from 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:59:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:59:24 INFO  : Context for 'APU' is selected.
+15:59:24 INFO  : Sourcing of 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/psinit/ps7_init.tcl' is done.
+15:59:25 INFO  : 'ps7_init' command is executed.
+15:59:25 INFO  : 'ps7_post_config' command is executed.
+15:59:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:59:25 INFO  : The application 'C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/Debug/Zynq_Design.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:59:25 INFO  : 'configparams force-mem-access 0' command is executed.
+15:59:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18A36" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18A36-23727093-0"}
+fpga -file C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/ojewell/CPRE488_MP0/mp0_vitis/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/ojewell/CPRE488_MP0/mp0_vitis/Zynq_Design/Debug/Zynq_Design.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:59:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:59:25 INFO  : 'con' command is executed.
+15:59:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:59:25 INFO  : Launch script is exported to file 'C:\Users\ojewell\CPRE488_MP0\mp0_vitis\.sdk\launch_scripts\single_application_debug\debugger_zynq_design-default.tcl'
+16:06:51 INFO  : Disconnected from the channel tcfchan#3.

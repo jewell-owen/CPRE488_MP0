@@ -58,26 +58,40 @@ int main()
 
 //    print("Hello World\n\r");
 //    print("Successfully ran Hello World application");
+
+    //Block to get values for buttons C, L, R, U, & D
 //    u32 buttonStatus = 0;
 //    for (int i = 0; i < 100000; i++){
 //   	buttonStatus = Xil_In32(XPAR_AXI_GPIO_1_BASEADDR);
 //    	printf("Button status: %u\r\n", buttonStatus);
 //    }
 
-    u32 buttonStatus = 0;
-    for (int i = 0; i < 100000; i++){
-    	buttonStatus = Xil_In32( 0xE000A00C);
-    	buttonStatus &= 0b111111;
-    	printf("Button status: %u\r\n", buttonStatus);
-    }
+    //Block to get values for buttons 8 & 9
+//    u32 buttonStatus = 0;
+//    for (int i = 0; i < 100000; i++){
+//   	buttonStatus = Xil_In32( 0xE000A00C);
+//    	buttonStatus &= 0b111111;
+//    	printf("Button status: %u\r\n", buttonStatus);
+//    }
 
+    //Block to get value of switches once at run time
 //    u32 switchStatus = Xil_In32(XPAR_AXI_GPIO_2_BASEADDR);
 //    printf("Switch status: %u\r\n", switchStatus);
 //    Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, switchStatus);
 
+    //Block to light up LEDS when switch is flipped
+    u32 switchStatus = 0;
+    for (int i = 0; i < 100000; i++){
+
+    	//read switch status
+    	switchStatus = Xil_In32(XPAR_AXI_GPIO_2_BASEADDR);
+    	printf("Switch status: %u\r\n", switchStatus);
+
+    	//Write LED status based on switches
+    	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, switchStatus);
+    }
 
 
     cleanup_platform();
-    //Xil_Out32();
     return 0;
 }
